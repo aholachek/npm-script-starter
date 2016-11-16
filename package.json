@@ -6,15 +6,15 @@
   "scripts": {
     "scss-watch": "sass --watch src/scss/manifest.scss:dist/styles.css",
     "copy-to-dist-watch": "cpx \"src/**/*.{php,png,jpg}\" dist --watch",
-    "server": "php -S localhost:8080",
-    "watchify": "watchify js/index.js -o dist/index.js -t [ babelify --presets [ es2015 ] ]",
-    "start": "npm-run-all scss-watch server copy-to-dist-watch watchify",
-    "babelify": "browserify js/index.js -o dist/index.js -t [ babelify --presets [ es2015 ] ]",
+    "server": "php -S localhost:8080 -t dist/",
+    "watchify": "watchify src/js/index.js -o dist/index.js -t [ babelify --presets [ es2015 ] ]",
+    "start": "npm-run-all --parallel scss-watch server copy-to-dist-watch watchify",
+    "babelify": "browserify src/js/index.js -o dist/index.js -t [ babelify --presets [ es2015 ] ]",
     "scss": "sass src/scss/manifest.scss:dist/styles.css",
     "process-css": "postcss --use autoprefixer --use cssnano -b 'last 2 versions' dist/styles.css -o dist/styles.css",
     "copy-to-dist": "cpx \"src/**/*.{php,png,jpg}\" dist",
     "uglify": "uglifyjs dist/index.js",
-    "dist": "npm-run-all scss process-css copy-to-dist babelify uglify"
+    "dist": "npm-run-all --parallel scss process-css copy-to-dist babelify uglify"
   },
   "author": "Fresh Tilled Soil",
   "license": "ISC",
