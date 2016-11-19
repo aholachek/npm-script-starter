@@ -1,5 +1,5 @@
 {
-  "name": "fts-npm-scripts",
+  "name": "",
   "version": "1.0.0",
   "description": "",
   "main": "js/index.js",
@@ -8,7 +8,7 @@
     "copy-to-dist-watch": "cpx \"src/**/*.{html,php,png,jpg,svg}\" dist --watch",
     "server": "http-server dist/ -o && livereload dist/",
     "watchify": "watchify src/js/index.js -o dist/index.js -t [ babelify --presets [ es2015 ] ]",
-    "start": "npm run copy-to-dist; npm-run-all --parallel scss-watch copy-to-dist-watch watchify server",
+    "start": "npm-run-all --parallel scss-watch copy-to-dist-watch watchify server",
     "babelify": "browserify src/js/index.js -o dist/index.js -t [ babelify --presets [ es2015 ] ]",
     "scss": "sass src/scss/manifest.scss:dist/styles.css",
     "process-css": "postcss --use autoprefixer --use cssnano -b 'last 2 versions' dist/styles.css -o dist/styles.css",
@@ -17,7 +17,7 @@
     "imagemin" : "imagemin dist/img/* --out-dir=dist/img",
     "dist": "rm -rf dist/ && mkdir dist/ && npm-run-all scss process-css copy-to-dist babelify uglify imagemin"
   },
-  "author": "Fresh Tilled Soil",
+  "author": "",
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^6.5.3",
