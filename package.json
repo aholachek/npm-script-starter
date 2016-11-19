@@ -14,7 +14,7 @@
     "process-css": "postcss --use autoprefixer --use cssnano -b 'last 2 versions' dist/styles.css -o dist/styles.css",
     "copy-to-dist": "cpx \"src/**/*.{html,php,png,jpg,svg}\" dist/",
     "uglify": "uglifyjs dist/index.js -o dist/index.js",
-    "imagemin" : "imagemin dist/img/* --out-dir=dist/img",
+    "imagemin": "imagemin dist/img/* --out-dir=dist/img",
     "dist": "rm -rf dist/ && mkdir dist/ && npm-run-all scss process-css copy-to-dist babelify uglify imagemin"
   },
   "author": "",
@@ -28,11 +28,11 @@
     "http-server": "^0.9.0",
     "imagemin": "^5.2.2",
     "imagemin-cli": "^3.0.0",
-    "svgo": "^0.7.1",
     "livereload": "^0.6.0",
     "node-sass": "^3.11.2",
     "npm-run-all": "^3.1.1",
     "postcss-cli": "^2.6.0",
+    "svgo": "^0.7.1",
     "uglifyjs": "^2.4.10",
     "watchify": "^3.7.0"
   },
